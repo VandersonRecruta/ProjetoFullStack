@@ -1,0 +1,171 @@
+{% extends 'main02.html' %}
+
+{% block content %}
+    {% if request.user.is_authenticated %}
+        <main>
+            <section id="catalogoSection" class="cotainer-fluid mx-0 my-2 p-0 text-center">
+            <h3 class="my-3" style="color: var(--laranja);">CATÁLOGO DE PRODUTOS</h3>
+            <div id="produtosGrupo" class="d-flex justify-content-center gap-2 cotainer-fluid my-2 p-0">
+                <!-- TEMAKI SALMÃO -->
+                <div class="card" style="width: 23rem;">
+                    <img src="../../static/images/temaki1.jpeg" class="card-img-top" alt="Temaki de Salmão">
+                    <div class="card-body d-flex flex-column justify-content-between">
+                    <h5 class="card-title" style="color: var(--laranja);">Temaki de salmão com cream cheese</h5>
+                    <p class="card-text">Essa é uma das receitas de temaki favoritas dos fãs da culinária japonesa. Para prepará-la, basta apostar em um recheio maravilhoso com pedacinhos de salmão, uma boa quantidade de cream cheese e cebolinha. Apesar da lista curta de ingredientes, essa versão de temaki não deixa a desejar quando o assunto é sabor.</p>
+                    <!-- Button trigger modal -->
+                    <div class="VerMais d-flex flex-column align-items-center">
+                        <h4 style="color: var(--verde);">R$30,00</h4>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#salmaoModal">
+                            VER MAIS
+                        </button>
+                    </div>
+                    </div>
+                </div>
+                <!-- COMBO -->
+                <div class="card" style="width: 23rem;">
+                    <img src="../../static/images/temaki3.jpeg" class="card-img-top" alt="Combo">
+                    <div class="card-body d-flex flex-column justify-content-between">
+                    <h5 class="card-title" style="color: var(--laranja);">Combo de Sushi e Sashimi: Uramaki, Hossomaki Kappamaki, Hossomaki Tekkamaki</h5>
+                    <p class="card-text">O hossomaki tem a composição típica e tradicional do sushi: um recheio que é envolto por uma camada de arroz envolvido por uma folha de nori. Uma particularidade do hossomaki é que os rolos são ligeiramente mais finos do que os rolos das demais variedades de sushi e tem uma variedade menor de recheio em cada, devido ao seu tamanho.</p>
+                    <!-- Button trigger modal -->
+                    <div class="VerMais d-flex flex-column align-items-center">
+                        <h4 style="color: var(--verde);">R$169,00</h4>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#comboModal">
+                            VER MAIS
+                        </button>
+                    </div>
+                    </div>
+                </div>
+                <!-- TEMAKI DOCE -->
+                <div class="card" style="width: 23rem;">
+                    <img src="../../static/images/temaki2.jpeg" class="card-img-top" alt="Temaki Doce">
+                    <div class="card-body d-flex flex-column justify-content-between">
+                    <h5 class="card-title" style="color: var(--laranja);">Temaki doce</h5>
+                    <p class="card-text">Se tem uma coisa que brasileiro gosta é de reinventar receitas. E esta receita de temaki doce é uma delas! Porém, apesar de deliciosa, como você deve imaginar, em nada tem a ver com o temaki japonês que estamos acostumados. Dentre os ingredientes utilizados no preparo estão leite condensado, coco ralado, arroz, leite de coco, creme de leite, cravo e canela a gosto e água.</p>
+                    <!-- Button trigger modal -->
+                    <div class="VerMais d-flex flex-column align-items-center">
+                        <h4 style="color: var(--verde);">R$30,00</h4>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#temakiModal">
+                            VER MAIS
+                        </button>
+                    </div>
+                    </div>
+                </div>
+                <!-- BARCA -->
+                <div class="card" style="width: 23rem;">
+                    <img src="../../static/images/temaki4.jpeg" class="card-img-top" alt="Barca">
+                    <div class="card-body d-flex flex-column justify-content-between">
+                    <h5 class="card-title" style="color: var(--laranja);">Barca de Sushi e Sashimi: Joe,  Gunkan, Hot roll, Hossomaki Kappamaki</h5>
+                    <p class="card-text">Os hot rolls são sushis enrolados, compostos por recheio, uma camada de arroz e uma tira de nori que a envolve. Depois de montados, os hot rolls são empanados e fritos. Não é um tipo tão tradicional no Japão, mas no ocidente é um tipo de sushi bem comum e bem aceito.</p>
+                    <!-- Button trigger modal -->
+                    <div class="VerMais  d-flex flex-column align-items-center">
+                        <h4 style="color: var(--verde);">R$529,00</h4>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#barcaModal">
+                            VER MAIS
+                        </button>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            </section>
+        </main>
+
+        <!-- TEMAKI SALMÃO Modal -->
+        <div class="modal fade" id="salmaoModal" tabindex="-1" aria-labelledby="salmaoModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h1 class="modal-title fs-5" style="color: red;" id="exampleModalLabel">TEMAKI SALMÃO</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img class="w-100" src="../../static/images/temaki1.jpeg" alt=""><span id="respSalmao"></span>
+                    <h3 style="color: green;">R$30,00</h3>
+                    <label for="Qsalmao">Quantidade do produto:</label>
+                    <input type="number" name="" id="Qsalmao">
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-success" id="salmao" >Adicionar ao carrinho</button>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        
+        <!-- COMBO Modal -->
+        <div class="modal fade" id="comboModal" tabindex="-1" aria-labelledby="comboModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h1 class="modal-title fs-5" style="color: red;" id="exampleModalLabel">COMBO SUSHI E SASHIMI</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img class="w-100" src="../../static/images/temaki3.jpeg" alt=""><span id="respCombo"></span>
+                    <h3 style="color: green;">R$169,00</h3>
+                    <label for="Qcombo">Quantidade do produto:</label>
+                    <input type="number" name="" id="Qcombo">
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-success" id="combo" >Adicionar ao carrinho</button>
+                </div>
+            </div>
+            </div>
+        </div>
+        
+        
+        <!-- TEMAKI DOCE Modal -->
+        <div class="modal fade" id="temakiModal" tabindex="-1" aria-labelledby="temakiModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h1 class="modal-title fs-5" style="color: red;" id="exampleModalLabel">TEMAKI DOCE</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img class="w-100" src="../../static/images/temaki2.jpeg" alt=""> <span id="respTemaki"></span>
+                    <h3 style="color: green;">R$30,00</h3>
+                    <label for="Qtemaki">Quantidade do produto:</label>
+                    <input type="number" name="" id="Qtemaki">
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-success" id="temaki" >Adicionar ao carrinho</button>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        
+        <!-- BARCA Modal -->
+        <div class="modal fade" id="barcaModal" tabindex="-1" aria-labelledby="barcaModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h1 class="modal-title fs-5" style="color: red;" id="exampleModalLabel">COMBO DE SUSHI E SASHIMI</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img class="w-100" src="../../static/images/temaki4.jpeg" alt=""> <span id="respBarca"></span>
+                    <h3 style="color: green;">R$529,00</h3>
+                    <label for="Qbarca">Quantidade do produto:</label>
+                    <input type="number" name="" id="Qbarca"> 
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-success" id="barca" >Adicionar ao carrinho</button> 
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <script src="../../static/JS/script.js"></script>
+    {% else %}
+        <script>
+            window.location.href = '/Login/' 
+        </script>
+    {% endif %}
+{% endblock %}
+   

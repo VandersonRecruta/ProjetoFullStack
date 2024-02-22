@@ -1,0 +1,25 @@
+{% extends 'main02.html' %}
+
+{% block content %}
+    {% if request.user.is_authenticated %}
+        <main>
+            <img id="chefe" src="../../static/images/chefe1.jpeg" alt="">
+            <h4 id="conteudo">Bem-vindo à Sushi Hashi, onde a arte culinária encontra a tradição japonesa para criar uma experiência gastronômica única. Fundada com uma paixão por sushi autêntico e qualidade excepcional, a Sushi Hashi é mais do que uma empresa de culinária; somos artesãos dedicados à perfeição de cada rolo, cada sabor e cada detalhe. <br><br>
+
+            Nossa jornada começou com a visão de compartilhar os sabores autênticos do Japão, trazendo à sua mesa a frescura do mar, a precisão da técnica e a criatividade dos mestres sushi. Combinamos ingredientes frescos e selecionados cuidadosamente, transformando-os em obras-primas culinárias que refletem a riqueza da cultura japonesa. <br><br>
+            
+            Na Sushi Hashi, cada peça é uma celebração da tradição e da inovação. Nossos chefs, verdadeiros artistas culinários, dedicam-se a aprimorar cada prato, equilibrando sabores e texturas para proporcionar uma experiência inesquecível aos nossos clientes.
+            
+            Comprometemo-nos não apenas a oferecer pratos deliciosos, mas também a criar um ambiente acolhedor, onde a hospitalidade e o serviço impecável se unem para tornar cada visita uma ocasião especial. Estamos aqui para não apenas satisfazer o seu paladar, mas também para proporcionar uma jornada gastronômica que desperta os sentidos e alimenta a alma. <br><br>
+            
+            Queremos compartilhar não apenas comida, mas uma experiência. Desde o momento em que você entra em nosso espaço, até a primeira mordida e além, estamos comprometidos em oferecer o melhor do sushi japonês, um encontro de tradição e inovação. <br><br>
+            
+            Aqui na Sushi Hashi, estamos apaixonados por sushi, dedicados à qualidade e ansiosos para compartilhar essa paixão com você. Junte-se a nós nesta jornada culinária, onde cada rolo conta uma história e cada sabor é uma aventura. <br>
+            </h4>
+        </main>
+    {% else %}
+        <script>
+            window.location.href = '/Login/' 
+        </script>
+    {% endif %}
+{% endblock %}

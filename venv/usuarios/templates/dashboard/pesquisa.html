@@ -1,0 +1,72 @@
+{% extends 'main02.html' %}
+
+{% block content %}
+    {% if request.user.is_authenticated %}
+        <link rel="stylesheet" href="../../static/CSS/pesquisa.css">
+
+        <main>
+            <div id="Cont">
+                <div id="Pesquisa">
+                    <h3><button type="button" id="esconder" class="Efeito"><h5>-</h5></button>&#11088;&#11088; Avaliação &#11088;&#11088; <button type="button" id="slide" class="Efeito"><h5>+</h5></button></h3> 
+                </div>
+                
+                <div id="Respostas">
+                    <h4>1- Como foi a experiência com o site?</h4>
+                    <form action="">
+                        <fieldset>
+                            &#128545;<input class="Pague" name="estrela" type="radio" value="Pessimo">
+                            &#128542;<input class="Pague" name="estrela" type="radio" value="Ruim">
+                            &#128522;<input class="Pague" name="estrela" type="radio" value="Bom">
+                            &#128516;<input class="Pague" name="estrela" type="radio" value="Muito Bom">
+                            &#128512;<input class="Pague" name="estrela" type="radio" value="Excelente">
+                        </fieldset>
+                    </form>
+                    <h4>2- Qual é a probabilidade de você nos recomendar a um colega?</h4>
+                    <form action="">
+                        <fieldset>
+                            &#128545;<input class="Pague" name="estrela" type="radio" value="Pessimo">
+                            &#128542;<input class="Pague" name="estrela" type="radio" value="Ruim">
+                            &#128522;<input class="Pague" name="estrela" type="radio" value="Bom">
+                            &#128516;<input class="Pague" name="estrela" type="radio" value="Muito Bom">
+                            &#128512;<input class="Pague" name="estrela" type="radio" value="Excelente">
+                        </fieldset>
+                    </form>
+                    <h4>3- Qual a qualidade dos nossos produtos?</h4>
+                    <form action="">
+                        <fieldset>
+                            &#128545;<input class="Pague" name="estrela" type="radio" value="Pessimo">
+                            &#128542;<input class="Pague" name="estrela" type="radio" value="Ruim">
+                            &#128522;<input class="Pague" name="estrela" type="radio" value="Bom">
+                            &#128516;<input class="Pague" name="estrela" type="radio" value="Muito Bom">
+                            &#128512;<input class="Pague" name="estrela" type="radio" value="Excelente">
+                        </fieldset>
+                    </form>
+                    <h4>4- O quanto você ficou satisfeito com sua visita ao site?</h4>
+                    <form action="">
+                        <fieldset>
+                            &#128545;<input class="Pague" name="estrela" type="radio" value="Pessimo">
+                            &#128542;<input class="Pague" name="estrela" type="radio" value="Ruim">
+                            &#128522;<input class="Pague" name="estrela" type="radio" value="Bom">
+                            &#128516;<input class="Pague" name="estrela" type="radio" value="Muito Bom">
+                            &#128512;<input class="Pague" name="estrela" type="radio" value="Excelente">
+                        </fieldset>
+                    </form>
+                    <h4>5- O que poderíamos ter feito melhor? </h4>
+                    <form action="mailto:vandersoncafe2222@gmail.com" method="post" enctype="text/plain">
+                        <div id="texto">
+                            <input id="feedback" type="text" placeholder="Deixe seu feedback">
+                        </div>
+                        <button id="finalizar" type="submit">Finalizar</button>
+                    </form>
+                </div>                    
+            </div>
+        </main>
+
+        <script src="../../static/JS/jquery-3.7.1.js"></script>
+        <script src="../../static/JS/script3.js"></script>
+    {% else %}
+        <script>
+            window.location.href = '/Login/' 
+        </script>
+    {% endif %}
+{% endblock %}

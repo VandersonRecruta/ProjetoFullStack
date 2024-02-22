@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap');
+
+*{
+    margin: 0%;
+    padding: 0%;
+}
+
+.Titulo{
+    font-family: 'Open Sans', sans-serif;
+    margin: 20px;
+    color: rgba(0,255,2,1);
+}
+
+.cabecalho{
+    width: 100%;
+    height: 90px;
+    background: rgb(255,0,0);
+    background: linear-gradient(0deg, rgba(255,0,0,1) 0%, rgba(0,0,0,1) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#btnHome{
+    position: absolute;
+    right: 70px;
+    text-decoration: none;
+    border-radius: 10px;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 10px;
+    padding: 10px 50px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 150px;
+    align-self: center;
+    border-width: 0;
+    margin-top: 1rem;
+    background-color: transparent;
+    border: 1px solid #fff;
+    transition: background-color 0.5s;
+}
+
+#btnHome:hover{
+    background-color: #fff;
+    color: rgba(0,0,0,1);
+}
