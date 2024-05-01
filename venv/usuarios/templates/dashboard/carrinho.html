@@ -1,0 +1,77 @@
+{% extends 'main02.html' %}
+
+{% block content %}
+    {% if request.user.is_authenticated %}
+        <link rel="stylesheet" href="../../static/CSS/carrinho.css">
+
+        <main>
+            <div id="Checkout">
+                <div id="Super">
+                    <h2>Meu Carrinho</h2> 
+                    <img src="../../static/images/car2.png" id="car2" alt="">
+                </div>
+            <div id="Conteudos" class="d-flex">
+                <div id="Endereco">
+                    <div class="InfoPaga">
+                        <h4>Informações de Entrega</h4>
+                    </div>
+                    <form action="">
+                        <label for="cidade">Cidade</label>
+                        <select  id="cidade">
+                            <option value="BSB">Brasília</option>
+                            <option value="LGS">Lago Sul</option>
+                            <option value="LGN">Lago Norte</option>
+                            <option value="SS">São Sebastião</option>
+                            <option value="GU">Guará</option>
+                            <option value="TA">Taguatinga</option>
+                            <option value="AG">Águas Claras</option>
+                            <option value="PW">Park Way</option>
+                        </select>
+
+                        <label for="quadra">Quadra</label>
+                        <input type="text" id="quadra" placeholder="Quadra">
+
+                        <label for="casa">Nº Casa</label>
+                        <input type="text" id="casa" placeholder="Nº Casa">
+
+                        <label for="bairro">Bairro</label>
+                        <input type="text" id="bairro" placeholder="Seu bairro*">
+
+                        <label for="telefone">Telefone</label>
+                        <input type="number" id="telefone" placeholder="Número de Telefone*">
+                    </form>
+                </div>
+                <div id="Pagamento">
+                <h4  class="InfoPaga">Forma de Pagamento</h4>
+                <h5 id="respCompra"></h5>
+                <div id="Cartao">
+                    <form action="">
+                        <fieldset>
+                            <label for="formaPagamento"><h4>Escolha a forma de Pagamento</h4></label><br><br>
+                            Débito<input class="Pague" type="radio" name="formaPagamento" value="debito">
+                            Crédito<input class="Pague" type="radio" name="formaPagamento" value="credito">
+                            Boleto<input class="Pague" type="radio" name="formaPagamento" value="boleto">
+                            Pix<input class="Pague" type="radio" name="formaPagamento" value="pix">
+                        </fieldset>
+
+                        <img  src="../../static/images/formasPagamento.png" alt="">
+                        
+                        <div id="botoes">
+                            <button id="cancelar" type="reset">Cancelar</button>
+                            <button id="comprar" type="button">Comprar</button>
+                        </div>
+                        
+                    </form>
+                </div>
+                </div>
+            </div>
+            </div>
+        </main>
+
+        <script src="../../static/JS/script2.js"></script>
+    {% else %}
+        <script>
+            window.location.href = '/Login/' 
+        </script>
+    {% endif %}
+{% endblock %}
